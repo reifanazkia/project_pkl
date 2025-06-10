@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\newsResource;
 use App\Http\Resources\schoolsResource;
 use App\Models\schoolsModel;
 use Illuminate\Http\Request;
@@ -92,7 +91,7 @@ class schoolsController extends Controller
         $schools = schoolsModel::find($id);
 
         //check if image is not empty
-        if ($request->hasFile('gambar')) {
+        if ($request->hasFile('logo')) {
 
             //delete old image
             Storage::delete('schools/' . basename($schools->logo));

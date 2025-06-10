@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class schoolsResource extends JsonResource
+class galeryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -13,7 +13,7 @@ class schoolsResource extends JsonResource
      * @return array<string, mixed>
      */
     
-   public $status;
+    public $status;
     public $message;
     public $resource;
 
@@ -31,8 +31,5 @@ class schoolsResource extends JsonResource
             'message'   => $this->message,
             'data'      => $this->resource
         ];
-
-
-}
-
+    }
 }

@@ -12,8 +12,7 @@ class newsResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-
-    //define properti
+    
     public $status;
     public $message;
     public $resource;
