@@ -34,11 +34,13 @@ class schoolsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
-            'deskripsi' => 'required|text',
-            'alamat' => 'required|text',
+            'deskripsi' => 'required|string',
+            'alamat' => 'required|string',
             'kontak' => 'required|string',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        return($request);
 
         //check if validation fails
         if ($validator->fails()) {
@@ -64,9 +66,11 @@ class schoolsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(schoolsModel $schools)
+    public function show($id)
     {
-        return $schools;
+        $d = schoolsModel::find($id);
+
+        return $d;
     }
 
     /**
@@ -76,11 +80,12 @@ class schoolsController extends Controller
     {
          $validator = Validator::make($request->all(), [
            'nama' => 'required|string',
-            'deskripsi' => 'required|text',
-            'alamat' => 'required|text',
+            'deskripsi' => 'required|string',
+            'alamat' => 'required|string',
             'kontak' => 'required|string',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
 
         //check if validation fails
         if ($validator->fails()) {

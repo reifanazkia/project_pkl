@@ -47,6 +47,8 @@ class newsController extends Controller
             'tanggal' => 'required|date'
         ]);
 
+        return($request);
+
         //check if validation fails
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
@@ -107,6 +109,8 @@ class newsController extends Controller
             'gambar' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'tanggal' => 'sometimes|required|date'
         ]);
+
+        return($request);
 
         //check if validation fails
         if ($validator->fails()) {

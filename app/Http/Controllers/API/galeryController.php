@@ -34,9 +34,10 @@ class galeryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'deskripsi' => 'required|text'
-
+            'deskripsi' => 'required|string'
         ]);
+
+        return($request);
 
         //check if validation fails
         if ($validator->fails()) {
@@ -79,8 +80,8 @@ class galeryController extends Controller
     public function update(Request $request, string $id)
     {
          $validator = Validator::make($request->all(), [
-           'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'deskripsi' => 'required|text'
+           'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'deskripsi' => 'required|string'
 
         ]);
 
